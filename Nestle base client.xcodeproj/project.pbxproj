@@ -14,6 +14,13 @@
 		DBACD9E31A6EAA4D00F622FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBACD9E21A6EAA4D00F622FF /* Images.xcassets */; };
 		DBACD9E61A6EAA4D00F622FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBACD9E41A6EAA4D00F622FF /* LaunchScreen.xib */; };
 		DBACD9F21A6EAA4D00F622FF /* Nestle_base_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACD9F11A6EAA4D00F622FF /* Nestle_base_clientTests.m */; };
+		DBACD9FD1A6F0CA800F622FF /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DBACD9FC1A6F0CA800F622FF /* DismissSegue.m */; };
+		DBE55AC31A70EA78009757DE /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE55AC21A70EA78009757DE /* DBManager.m */; };
+		DBE55AC91A70EB1B009757DE /* clientInfoDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = DBE55AC81A70EB1B009757DE /* clientInfoDB.sql */; };
+		DBE55ACB1A70ECF7009757DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE55ACA1A70ECF7009757DE /* UIKit.framework */; };
+		DBE55ACD1A70ED02009757DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE55ACC1A70ED02009757DE /* Foundation.framework */; };
+		DBE55ACF1A70ED0F009757DE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE55ACE1A70ED0F009757DE /* libsqlite3.dylib */; };
+		DBE55AD21A70EF43009757DE /* ClientForm.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE55AD11A70EF43009757DE /* ClientForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,16 @@
 		DBACD9EB1A6EAA4D00F622FF /* Nestle base clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nestle base clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBACD9F01A6EAA4D00F622FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBACD9F11A6EAA4D00F622FF /* Nestle_base_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nestle_base_clientTests.m; sourceTree = "<group>"; };
+		DBACD9FB1A6F0C6900F622FF /* DismissSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
+		DBACD9FC1A6F0CA800F622FF /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
+		DBE55AC11A70EA78009757DE /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		DBE55AC21A70EA78009757DE /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		DBE55AC81A70EB1B009757DE /* clientInfoDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = clientInfoDB.sql; sourceTree = "<group>"; };
+		DBE55ACA1A70ECF7009757DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DBE55ACC1A70ED02009757DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DBE55ACE1A70ED0F009757DE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DBE55AD01A70EF43009757DE /* ClientForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientForm.h; sourceTree = "<group>"; };
+		DBE55AD11A70EF43009757DE /* ClientForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientForm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE55ACF1A70ED0F009757DE /* libsqlite3.dylib in Frameworks */,
+				DBE55ACD1A70ED02009757DE /* Foundation.framework in Frameworks */,
+				DBE55ACB1A70ECF7009757DE /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +83,15 @@
 		DBACD9C91A6EAA4D00F622FF = {
 			isa = PBXGroup;
 			children = (
+				DBE55ACE1A70ED0F009757DE /* libsqlite3.dylib */,
+				DBE55ACC1A70ED02009757DE /* Foundation.framework */,
+				DBE55ACA1A70ECF7009757DE /* UIKit.framework */,
 				DBACD9D41A6EAA4D00F622FF /* Nestle base client */,
 				DBACD9EE1A6EAA4D00F622FF /* Nestle base clientTests */,
 				DBACD9D31A6EAA4D00F622FF /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		DBACD9D31A6EAA4D00F622FF /* Products */ = {
 			isa = PBXGroup;
@@ -81,14 +105,21 @@
 		DBACD9D41A6EAA4D00F622FF /* Nestle base client */ = {
 			isa = PBXGroup;
 			children = (
+				DBE55AC81A70EB1B009757DE /* clientInfoDB.sql */,
+				DBE55AC11A70EA78009757DE /* DBManager.h */,
+				DBE55AC21A70EA78009757DE /* DBManager.m */,
 				DBACD9D91A6EAA4D00F622FF /* AppDelegate.h */,
 				DBACD9DA1A6EAA4D00F622FF /* AppDelegate.m */,
 				DBACD9DC1A6EAA4D00F622FF /* ViewController.h */,
 				DBACD9DD1A6EAA4D00F622FF /* ViewController.m */,
+				DBACD9FB1A6F0C6900F622FF /* DismissSegue.h */,
+				DBACD9FC1A6F0CA800F622FF /* DismissSegue.m */,
 				DBACD9DF1A6EAA4D00F622FF /* Main.storyboard */,
 				DBACD9E21A6EAA4D00F622FF /* Images.xcassets */,
 				DBACD9E41A6EAA4D00F622FF /* LaunchScreen.xib */,
 				DBACD9D51A6EAA4D00F622FF /* Supporting Files */,
+				DBE55AD01A70EF43009757DE /* ClientForm.h */,
+				DBE55AD11A70EF43009757DE /* ClientForm.m */,
 			);
 			path = "Nestle base client";
 			sourceTree = "<group>";
@@ -168,6 +199,7 @@
 				TargetAttributes = {
 					DBACD9D11A6EAA4D00F622FF = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7XP7M76727;
 					};
 					DBACD9EA1A6EAA4D00F622FF = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -202,6 +234,7 @@
 				DBACD9E11A6EAA4D00F622FF /* Main.storyboard in Resources */,
 				DBACD9E61A6EAA4D00F622FF /* LaunchScreen.xib in Resources */,
 				DBACD9E31A6EAA4D00F622FF /* Images.xcassets in Resources */,
+				DBE55AC91A70EB1B009757DE /* clientInfoDB.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +254,10 @@
 			files = (
 				DBACD9DE1A6EAA4D00F622FF /* ViewController.m in Sources */,
 				DBACD9DB1A6EAA4D00F622FF /* AppDelegate.m in Sources */,
+				DBACD9FD1A6F0CA800F622FF /* DismissSegue.m in Sources */,
 				DBACD9D81A6EAA4D00F622FF /* main.m in Sources */,
+				DBE55AD21A70EF43009757DE /* ClientForm.m in Sources */,
+				DBE55AC31A70EA78009757DE /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +381,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Nestle base client/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -355,9 +394,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Nestle base client/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -414,6 +456,7 @@
 				DBACD9F71A6EAA4D00F622FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBACD9F81A6EAA4D00F622FF /* Build configuration list for PBXNativeTarget "Nestle base clientTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +465,7 @@
 				DBACD9FA1A6EAA4D00F622FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

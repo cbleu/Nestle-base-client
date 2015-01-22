@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <MFMailComposeViewControllerDelegate>
+
+
+- (IBAction)deleteDataBase:(id)sender;
+
+- (IBAction)exportDatabase:(id)sender;
 
 
 @end
