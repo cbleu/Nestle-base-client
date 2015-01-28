@@ -13,11 +13,16 @@
 
 @interface ViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UISwitch *switchErase;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonErase;
+
 
 - (IBAction)deleteDataBase:(id)sender;
 
 - (IBAction)exportDatabase:(id)sender;
 
+- (IBAction)switchPressedAction:(id)sender;
 
 @end
 

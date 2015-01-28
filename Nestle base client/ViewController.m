@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+@property (nonatomic, strong) NSArray *arrClientInfo;
 
 -(void)loadData;
 
@@ -22,12 +23,15 @@
 
 @implementation ViewController
 
+
+@synthesize switchErase;
+@synthesize buttonErase;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 	
 	// Initialize the dbManager property.
-	self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sampledb.sql"];
+	self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"clientInfoDB.sql"];
 	
 	// Load the data.
 	[self loadData];
@@ -55,22 +59,29 @@
 	[self displayComposerSheet];
 }
 
+-(IBAction) switchPressedAction:(id)sender {
+	
+	// Lock-unlock the erase button
+	if(self.switchErase.on){
+		self.buttonErase.enabled = YES;
+	}else{
+		self.buttonErase.enabled = NO;
+	}
+}
 
 #pragma mark - Private method implementation
 
 
 -(void)loadData{
 	// Form the query.
-//	NSString *query = @"select * from clientInfo";
+	NSString *query = @"select * from clientInfo";
 	
 	// Get the results.
-//	if (self.arrClientInfo != nil) {
-//		self.arrClientInfo = nil;
-//	}
-//	self.arrClientInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+	if (self.arrClientInfo != nil) {
+		self.arrClientInfo = nil;
+	}
+	self.arrClientInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
 	
-	// Reload the table view.
-//	[self.tblPeople reloadData];
 }
 
 -(void)eraseAllData{
@@ -80,10 +91,6 @@
 	// Execute the query.
 	[self.dbManager executeQuery:query];
 	
-//	self.arrClientInfo = nil;
-	
-	// Reload the table view.
-//	[self.tblPeople reloadData];
 }
 
 -(void)displayComposerSheet
@@ -93,17 +100,13 @@
 	[picker setSubject:@"Export CSV de la base client"];
 	
 	// Set up recipients
-	// NSArray *toRecipients = [NSArray arrayWithObject:@"first@example.com"];
+	NSArray *toRecipients = [NSArray arrayWithObject:@"contact@scotta.fr"];
 	// NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
 	// NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"];
 	
-	// [picker setToRecipients:toRecipients];
+	[picker setToRecipients:toRecipients];
 	// [picker setCcRecipients:ccRecipients];
 	// [picker setBccRecipients:bccRecipients];
-	
-	// Attach an image to the email
-	//    UIImage *coolImage = ...;
-	//    NSData *myData = UIImagePNGRepresentation(coolImage);
 	
 	// Set the documents directory path to the documentsDirectory property.
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -116,12 +119,11 @@
 	[picker addAttachmentData:fileData mimeType:@"text/csv" fileName:@"clientInfo.csv"];
 	
 	// Fill out the email body text
-	NSString *emailBody = @"My cool image is attached";
+	NSString *emailBody = @"Email d'export de l'application Nestle base Client Club";
 	[picker setMessageBody:emailBody isHTML:NO];
-	//    [self presentModalViewController:picker animated:YES];
+
 	[self presentViewController:picker animated:YES completion:nil];
-	
-	//    [picker release];
+
 }
 
 #pragma mark - MFMailComposeViewController delegate methods
@@ -147,7 +149,7 @@
 			NSLog(@"Result: not sent");
 			break;
 	}
-	//    [self dismissModalViewControllerAnimated:YES];
+
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

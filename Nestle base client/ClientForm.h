@@ -16,9 +16,15 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 
+@property (weak, nonatomic) IBOutlet UISwitch *switchClub;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonSend;
+
 @property (nonatomic) int recordIDToEdit;
 
 
 - (IBAction)saveInfo:(id)sender;
+
+- (IBAction)switchPressedAction:(id)sender;
 
 @end

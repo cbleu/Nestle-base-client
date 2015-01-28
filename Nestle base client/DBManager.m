@@ -159,16 +159,14 @@
             // In the database cannot be opened then show the error message on the debugger.
 			NSLog(@"%s", sqlite3_errmsg(sqlite3Database));
 		}
-		
 		// Release the compiled statement from memory.
 		sqlite3_finalize(compiledStatement);
-		
 	}
-    
     // Close the database.
 	sqlite3_close(sqlite3Database);
 }
 
+//Added by cbleu: CSV export of the database
 #pragma mark - Public method implementation
 
 -(void) exportDBtoCSV {
@@ -189,8 +187,6 @@
             while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 //this assumes that there are two rows in your database you want to get data from
                 csv = [csv stringByAppendingFormat: @"%@,%@,%@\n", [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)], [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)], [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)]];
-//                NSLog(@"%@", csv);
-                
             }
             
             sqlite3_finalize(compiledStatement);

@@ -83,9 +83,6 @@
 		DBACD9C91A6EAA4D00F622FF = {
 			isa = PBXGroup;
 			children = (
-				DBE55ACE1A70ED0F009757DE /* libsqlite3.dylib */,
-				DBE55ACC1A70ED02009757DE /* Foundation.framework */,
-				DBE55ACA1A70ECF7009757DE /* UIKit.framework */,
 				DBACD9D41A6EAA4D00F622FF /* Nestle base client */,
 				DBACD9EE1A6EAA4D00F622FF /* Nestle base clientTests */,
 				DBACD9D31A6EAA4D00F622FF /* Products */,
@@ -127,6 +124,9 @@
 		DBACD9D51A6EAA4D00F622FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBE55ACE1A70ED0F009757DE /* libsqlite3.dylib */,
+				DBE55ACC1A70ED02009757DE /* Foundation.framework */,
+				DBE55ACA1A70ECF7009757DE /* UIKit.framework */,
 				DBACD9D61A6EAA4D00F622FF /* Info.plist */,
 				DBACD9D71A6EAA4D00F622FF /* main.m */,
 			);
@@ -382,10 +382,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Nestle base client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -395,10 +398,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Nestle base client/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

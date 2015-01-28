@@ -11,6 +11,8 @@
 @implementation DismissSegue
 
 - (void)perform {
+	
+	// Close both modal view controller. TODO: improve !
 	UIViewController *sourceViewController = self.sourceViewController;
 	[sourceViewController.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
